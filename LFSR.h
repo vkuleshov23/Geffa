@@ -1,6 +1,7 @@
 #ifndef _LFSR_
 #define _LFSR_
 #include <iostream>
+#include <cmath>
 
 class LFSR {
 
@@ -23,8 +24,8 @@ public:
 	}
 
 	void printBin() {
-		for(int i = 0; i < 9; i++) {
-			std::cout << (this->NUMBER & (256>>i)?'1':'0');
+		for(int i = 0; i < 18; i++) {
+			std::cout << (this->NUMBER & (int(pow(2, 17))>>i)?'1':'0');
 		}
 		// std::cout << '\n';
 		

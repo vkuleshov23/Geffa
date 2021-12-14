@@ -22,13 +22,13 @@ public:
 		unsigned int a1 = this->lfsr1.shift();
 		unsigned int a2 = this->lfsr2.shift();
 		unsigned int a3 = this->lfsr3.shift();
-		this->NUMBER = ((a1 & a2) ^ (~a1 & a3));
+		this->NUMBER = ((a1 & a2) | (~a1 & a3));
 		return this->NUMBER;
 	}
 
 	void printBin() {
-		for(int i = 0; i < 17; i++) {
-			std::cout << (this->NUMBER & (int(pow(2, 17))>>i)?'1':'0');
+		for(int i = 0; i < 18; i++) {
+			std::cout << (this->NUMBER & (int(pow(2, 16))>>i)?'1':'0');
 		}
 		std::cout << '\n';
 		
